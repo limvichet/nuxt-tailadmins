@@ -1,0 +1,18 @@
+<template>
+  <svg
+    width="176"
+    height="176"
+    viewBox="0 0 176 176"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M0 35C0 15.67 15.67 0 35 0H141C160.33 0 176 15.67 176 35V141C176 160.33 160.33 176 141 176H35C15.67 176 0 160.33 0 141V35Z"
+      fill="#F64838"
+    />
+    <path
+      d="M81.75 105.818H53L93.25 25V71.1818H122L81.75 152V105.818Z"
+      fill="white"
+    />
+  </svg>
+</template>
