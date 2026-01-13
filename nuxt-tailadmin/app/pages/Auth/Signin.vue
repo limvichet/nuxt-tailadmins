@@ -276,6 +276,11 @@
 import { ref } from 'vue'
 import CommonGridShape from '@/components/common/CommonGridShape.vue'
 import FullScreenLayout from '@/components/layout/FullScreenLayout.vue'
+
+definePageMeta({
+  path: '/auth/signin'
+})
+
 const email = ref('')
 const password = ref('')
 const showPassword = ref(false)

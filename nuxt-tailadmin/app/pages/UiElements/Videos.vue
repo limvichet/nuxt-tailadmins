@@ -28,6 +28,11 @@ import PageBreadcrumb from '@/components/common/PageBreadcrumb.vue'
 import AdminLayout from '@/components/layout/AdminLayout.vue'
 import ComponentCard from '@/components/common/ComponentCard.vue'
 import YouTubeEmbed from '@/components/ui/YouTubeEmbed.vue'
+
+definePageMeta({
+  path: '/uielements/videos'
+})
+
 const currentPageTitle = ref('Videos')
 </script>
 

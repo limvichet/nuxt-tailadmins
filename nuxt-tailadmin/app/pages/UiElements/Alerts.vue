@@ -76,6 +76,11 @@ import PageBreadcrumb from '@/components/common/PageBreadcrumb.vue'
 import AdminLayout from '@/components/layout/AdminLayout.vue'
 import ComponentCard from '@/components/common/ComponentCard.vue'
 import Alert from '@/components/ui/Alert.vue'
+
+definePageMeta({
+  path: '/uielements/alerts'
+})
+
 const currentPageTitle = ref('Alerts')
 </script>
 

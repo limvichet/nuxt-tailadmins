@@ -15,5 +15,10 @@ import PageBreadcrumb from "@/components/common/PageBreadcrumb.vue";
 import AdminLayout from "@/components/layout/AdminLayout.vue";
 import ComponentCard from "@/components/common/ComponentCard.vue";
 import BasicTableOne from "@/components/tables/basic-tables/BasicTableOne.vue";
+
+definePageMeta({
+  path: '/tables/basic-tables'
+})
+
 const currentPageTitle = ref("Basic Tables");
 </script>

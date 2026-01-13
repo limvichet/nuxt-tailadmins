@@ -250,12 +250,12 @@ const menuGroups = [
       {
         icon: CalenderIcon,
         name: "Calendar",
-        path: "/calendar",
+        path: "/others/calendar",
       },
       {
         icon: UserCircleIcon,
         name: "User Profile",
-        path: "/profile",
+        path: "/others/profile",
       },
 
       {
@@ -268,7 +268,7 @@ const menuGroups = [
       {
         name: "Tables",
         icon: TableIcon,
-        subItems: [{ name: "Basic Tables", path: "/basic-tables", pro: false }],
+        subItems: [{ name: "Basic Tables", path: "/tables/basic-tables", pro: false }],
       },
       {
         name: "Pages",
@@ -287,28 +287,28 @@ const menuGroups = [
         icon: PieChartIcon,
         name: "Charts",
         subItems: [
-          { name: "Line Chart", path: "/line-chart", pro: false },
-          { name: "Bar Chart", path: "/bar-chart", pro: false },
+          { name: "Line Chart", path: "/chart/line-chart", pro: false },
+          { name: "Bar Chart", path: "/chart/bar-chart", pro: false },
         ],
       },
       {
         icon: BoxCubeIcon,
         name: "Ui Elements",
         subItems: [
-          { name: "Alerts", path: "/alerts", pro: false },
-          { name: "Avatars", path: "/avatars", pro: false },
-          { name: "Badge", path: "/badge", pro: false },
-          { name: "Buttons", path: "/buttons", pro: false },
-          { name: "Images", path: "/images", pro: false },
-          { name: "Videos", path: "/videos", pro: false },
+          { name: "Alerts", path: "/uielements/alerts", pro: false },
+          { name: "Avatars", path: "/uielements/avatars", pro: false },
+          { name: "Badge", path: "/uielements/badge", pro: false },
+          { name: "Buttons", path: "/uielements/buttons", pro: false },
+          { name: "Images", path: "/uielements/images", pro: false },
+          { name: "Videos", path: "/uielements/videos", pro: false },
         ],
       },
       {
         icon: PlugInIcon,
         name: "Authentication",
         subItems: [
-          { name: "Signin", path: "/signin", pro: false },
-          { name: "Signup", path: "/signup", pro: false },
+          { name: "Signin", path: "/auth/signin", pro: false },
+          { name: "Signup", path: "/auth/signup", pro: false },
         ],
       },
       // ... Add other menu items here

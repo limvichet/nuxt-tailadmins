@@ -315,6 +315,10 @@ import CommonGridShape from '@/components/common/CommonGridShape.vue'
 import { ref } from 'vue'
 import { RouterLink } from 'vue-router'
 
+definePageMeta({
+  path: '/auth/signup'
+})
+
 const firstName = ref('')
 const lastName = ref('')
 const email = ref('')

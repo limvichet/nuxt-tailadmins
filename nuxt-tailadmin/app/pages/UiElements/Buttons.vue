@@ -49,6 +49,11 @@ import AdminLayout from '@/components/layout/AdminLayout.vue'
 import ComponentCard from '@/components/common/ComponentCard.vue'
 import Button from '@/components/ui/Button.vue'
 import { BoxIcon } from '@/icons'
+
+definePageMeta({
+  path: '/uielements/buttons'
+})
+
 const currentPageTitle = ref('Buttons')
 </script>
 

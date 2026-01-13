@@ -222,6 +222,10 @@
 import AdminLayout from '@/components/layout/AdminLayout.vue'
 import PageBreadcrumb from '@/components/common/PageBreadcrumb.vue'
 
+definePageMeta({
+  path: '/others/calendar'
+})
+
 const currentPageTitle = ref('Calendar')
 import { ref, reactive, onMounted } from 'vue'
 import FullCalendar from '@fullcalendar/vue3'

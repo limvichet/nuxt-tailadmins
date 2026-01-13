@@ -67,6 +67,11 @@ import PageBreadcrumb from '../../components/common/PageBreadcrumb.vue'
 import AdminLayout from '../../components/layout/AdminLayout.vue'
 import ComponentCard from '../../components/common/ComponentCard.vue'
 import { PlusIcon } from '@/icons'
+
+definePageMeta({
+  path: '/uielements/badge'
+})
+
 const currentPageTitle = ref('Badge')
 
 const colors = ['primary', 'success', 'error', 'warning', 'info', 'light', 'dark'] as const

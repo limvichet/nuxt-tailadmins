@@ -23,6 +23,12 @@ import ComponentCard from '@/components/common/ComponentCard.vue'
 import ResponsiveImage from '@/components/ui/images/ResponsiveImage.vue'
 import TwoColumnImageGrid from '@/components/ui/images/TwoColumnImageGrid.vue'
 import ThreeColumnImageGrid from '@/components/ui/images/ThreeColumnImageGrid.vue'
+
+definePageMeta({
+  path: '/uielements/images'
+})
+
+
 const currentPageTitle = ref('Images')
 </script>
 
