@@ -3,52 +3,61 @@
 </template>
 
 <script setup lang="ts">
-import { ref, provide, onMounted, watch, computed } from 'vue'
+import { ref, provide, onMounted, watch } from 'vue'
 
-type Theme = 'light' | 'dark'
+type Theme = 'light' | 'dark' | 'system'
 
-const theme = ref<Theme>('light')
-const isInitialized = ref(false)
+const theme = ref<Theme>('system')
 
-const isDarkMode = computed(() => theme.value === 'dark')
+const updateDOM = (mode: 'light' | 'dark') => {
+  if (mode === 'dark') {
+    document.documentElement.classList.add('dark')
+  } else {
+    document.documentElement.classList.remove('dark')
+  }
+}
 
-const toggleTheme = () => {
-  theme.value = theme.value === 'light' ? 'dark' : 'light'
+const getSystemTheme = (): 'light' | 'dark' => {
+  return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+}
+
+const applyTheme = () => {
+  if (theme.value === 'system') {
+    updateDOM(getSystemTheme())
+  } else {
+    updateDOM(theme.value)
+  }
+}
+
+const setTheme = (newTheme: Theme) => {
+  theme.value = newTheme
+  localStorage.setItem('theme', newTheme)
+  applyTheme()
 }
 
 onMounted(() => {
   const savedTheme = localStorage.getItem('theme') as Theme | null
-  const initialTheme = savedTheme || 'light' // Default to light theme
+  if (savedTheme) theme.value = savedTheme
+  
+  applyTheme()
 
-  theme.value = initialTheme
-  isInitialized.value = true
-})
-
-watch([theme, isInitialized], ([newTheme, newIsInitialized]) => {
-  if (newIsInitialized) {
-    localStorage.setItem('theme', newTheme)
-    if (newTheme === 'dark') {
-      document.documentElement.classList.add('dark')
-    } else {
-      document.documentElement.classList.remove('dark')
-    }
-  }
+  // Listen for System OS changes
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+    if (theme.value === 'system') applyTheme()
+  })
 })
 
 provide('theme', {
-  isDarkMode,
-  toggleTheme,
+  theme,
+  setTheme,
 })
 </script>
 
 <script lang="ts">
 import { inject } from 'vue'
-
 export function useTheme() {
-  const theme = inject('theme')
-  if (!theme) {
-    throw new Error('useTheme must be used within a ThemeProvider')
-  }
-  return theme
+  const context = inject<{ theme: any, setTheme: (t: 'light' | 'dark' | 'system') => void }>('theme')
+  if (!context) throw new Error('useTheme must be used within a ThemeProvider')
+  return context
 }
 </script>
